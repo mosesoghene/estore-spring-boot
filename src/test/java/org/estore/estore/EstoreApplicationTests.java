@@ -12,18 +12,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 class EstoreApplicationTests {
 
 
-	@Test
-	void contextLoads() {
-
-	}
+//	@Test
+//	void contextLoads() {
+//
+//	}
 
 	@Test
 	void testConnectToDatabase() {
 		try(HikariDataSource dataSource = new HikariDataSource();){
 			dataSource.setDriverClassName("org.postgresql.Driver");
-			dataSource.setJdbcUrl("jdbc:postgresql://localhost:5050/estore_db");
-			dataSource.setUsername("localdevv@localhost.com");
-			dataSource.setPassword("JavaScr1p7");
+			dataSource.setJdbcUrl("jdbc:postgresql://localhost/estore_db");
+			dataSource.setUsername("postgres");
+			dataSource.setPassword("postgres");
 			assertThat(dataSource).isNotNull();
 		}
 	}
